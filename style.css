@@ -130,7 +130,7 @@ input[type="submit"] {
 
 /* container */
 .discussion__container {
-  /* display: flex; content부분 가운데정렬되버림
+  /* display: flex; content부분 가운데정렬 
   justify-content: space-between; */
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
@@ -171,21 +171,13 @@ div.discussion__avatar--wrapper > img {
 }
 
 /* pagination */
-section.disccusion__button {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-.content {
+.disccusion__button {
   display: flex;
-  padding: 0.3em 0;
-  list-style: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  justify-content: space-between;
 }
-.buttons {
-  position: relative;
-  padding: 1rem 0;
+button.prev,
+button.next {
   display: inline-flex;
-  justify-content: center;
+  width: 50px;
+  cursor: pointer;
 }
