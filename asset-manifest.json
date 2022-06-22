@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fe-sprint-my-agora-states/static/css/main.87299048.css",
+    "main.js": "/fe-sprint-my-agora-states/static/js/main.bccdac24.js",
+    "index.html": "/fe-sprint-my-agora-states/index.html",
+    "main.87299048.css.map": "/fe-sprint-my-agora-states/static/css/main.87299048.css.map",
+    "main.bccdac24.js.map": "/fe-sprint-my-agora-states/static/js/main.bccdac24.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.87299048.css",
+    "static/js/main.bccdac24.js"
+  ]
+}
