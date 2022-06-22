@@ -7,7 +7,7 @@
 </p>
 
 <div align=center>
-  <!-- <a href="https://xmun74.github.io/WorkTravelToDoApp/" target="_blank">Github pages</a> -->
+  <a href="https://xmun74.github.io/fe-sprint-my-agora-states/index.html" target="_blank">Github pages</a>
 </div>
 <br>
 
