@@ -59,23 +59,18 @@ const convertToDiscussion = (obj) => {
 
 // agoraStatesDiscussions 배열의 모든 데이터를 화면에 렌더링하는 함수입니다.
 const render = (element) => {
-  fetch(`http://localhost:3001/${path}`, {
-    method: "POST",
-    body: JSON.stringify(body),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((res) => res.json())
-    .then((res) => {
-      this.render(res);
-    });
-  // for (let i = 0; i < agoraStatesDiscussions.length; i += 1) {
-  //   element.append(convertToDiscussion(agoraStatesDiscussions[i]));
-  // }
+  for (let i = 0; i < agoraStatesDiscussions.length; i += 1) {
+    element.append(convertToDiscussion(agoraStatesDiscussions[i]));
+  }
   return;
 };
 
 // ul 요소에 agoraStatesDiscussions 배열의 모든 데이터를 화면에 렌더링합니다.
-const ul = document.querySelector("ul.discussions__container");
-render(ul);
+// 마지막에 fetch 줘야 에러안난다 // 아고라 서버파일에 서버를 켜야 fetch가 된다
+fetch(`http://localhost:3001/discussions`)
+  .then((res) => res.json())
+  .then((json) => {
+    agoraStatesDiscussions = json;
+    const ul = document.querySelector("ul.discussions__container");
+    render(ul);
+  });
