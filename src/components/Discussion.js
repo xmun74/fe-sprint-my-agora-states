@@ -8,7 +8,7 @@ export const Discussion = ({ discussion, deleteDiscussion }) => {
         <img
           className="discussion__avatar--image"
           src={avatarUrl}
-          alt={`avatar of ${author}`}
+          alt={`avatar of ${login}`}
         />
       </div>
       <div className="discussion__content">

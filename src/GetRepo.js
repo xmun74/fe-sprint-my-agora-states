@@ -1,10 +1,10 @@
 import { graphql } from "@octokit/graphql";
-// import { useState, useEffect } from "react";
 
 async function getRepo() {
+  const token = process.env.REACT_APP_GITHUB_TOKEN;
   const graphqlWithAuth = graphql.defaults({
     headers: {
-      authorization: `token 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`,
+      authorization: `token ${token}`, // gh personal access token
     },
   });
 

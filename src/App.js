@@ -13,14 +13,6 @@ function App() {
     getGraphQl(); // 깃헙 GraphQL API 쿼리로 받아오기
   }, []);
 
-  // const getDiscussion = () => {
-  //   return fetch(domain + "/discussions")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setDiscussions(data); // 상태 갱신 => 리렌더링
-  //     });
-  // };
-
   // async await
   const getDiscussion = async () => {
     const res = await fetch(domain + "/discussions");
@@ -29,9 +21,9 @@ function App() {
   };
 
   const getGraphQl = async () => {
-    const data = await getRepo();
+    const { discussions } = await getRepo();
     // console.log(data.discussions.edges);
-    setDiscussions(data.discussions.edges);
+    setDiscussions(discussions.edges);
   };
 
   const addDiscussion = ({ title, author, bodyText }) => {
