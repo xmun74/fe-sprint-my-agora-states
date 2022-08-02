@@ -7,7 +7,7 @@ export const Discussions = ({ discussions, deleteDiscussion }) => {
         {discussions.map((discussion) => {
           return (
             <Discussion
-              key={discussion.id}
+              key={discussion.node.id}
               discussion={discussion}
               deleteDiscussion={deleteDiscussion}
             />

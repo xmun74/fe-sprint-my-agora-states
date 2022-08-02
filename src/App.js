@@ -1,6 +1,7 @@
 import { Discussions } from "./components/Discussions";
 import { Form } from "./components/Form";
 import { useEffect, useState } from "react";
+import getRepo from "./GetRepo";
 
 function App() {
   const domain = "http://localhost:3001";
@@ -8,7 +9,8 @@ function App() {
 
   //fetch는 side effect
   useEffect(() => {
-    getDiscussion();
+    // getDiscussion(); // 서버에서 받아오기
+    getGraphQl(); // 깃헙 GraphQL API 쿼리로 받아오기
   }, []);
 
   // const getDiscussion = () => {
@@ -24,6 +26,12 @@ function App() {
     const res = await fetch(domain + "/discussions");
     const data = await res.json();
     setDiscussions(data);
+  };
+
+  const getGraphQl = async () => {
+    const data = await getRepo();
+    // console.log(data.discussions.edges);
+    setDiscussions(data.discussions.edges);
   };
 
   const addDiscussion = ({ title, author, bodyText }) => {
